@@ -110,6 +110,7 @@ Third-party services/OS features we're bolting on, not core Flutter.
 ### 13_Code_Generation
 
 - f59_dart_build_runner_and_code_generation
+- f62_json_serializable_code_generation
 
 ### 14_Native_Interop_and_Platform_Channels
 
