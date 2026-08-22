@@ -1,6 +1,6 @@
 
 ---
-## 📁 Folder structure (14 folders, flat, no sub-nesting)
+## 📁 Proposed structure (12 folders, flat,no sub-nesting)
 
 Folder order below roughly follows our own learning path: UI basics → navigation → state → data → backend services → polish → hardening → tooling → quality → shipping → integrations → ML.
 
@@ -15,13 +15,14 @@ Core widget catalog + everything about how things _look_.
 - f5_more_flutter_widgets_with_changing_state
 - f6_advanced_flutter_widgets
 - f7_newly_added_flutter_widgets
-- f13_statefulwidget_lifecycle_methods
-- f22_flutter_theme_colorscheme_self_study
-- f23_flutter_responsive_ui
-- f24_flutter_context_extras
-- f25_flutter_extras_of_basic
-- f26_part2_of_flutter_extras_of_basic
-- f54_advanced_ui_designs_of_flutter
+- f8_statefulwidget_lifecycle_methods
+- f9_flutter_theme_colorscheme_self_study
+- f10_flutter_responsive_ui_and_widgets
+- f11_part_2_of_responsive_ui_and_packages
+- f12_flutter_context_extras
+- f13_flutter_extras_of_basic
+- f14_part2_of_flutter_extras_of_basic
+- f15_advanced_ui_designs_of_flutter
 
 ### 02_Navigation
 
@@ -117,3 +118,12 @@ Third-party services/OS features we're bolting on, not core Flutter.
 Anything crossing the Dart ↔ native boundary: `MethodChannel`, `EventChannel`, Dart FFI, writing our own platform-specific plugin (the Kotlin/Swift/ObjC/Java side included). This does **not** belong in [11_Platform_Integrations](#11_Platform_Integrations) that folder is for *consuming* someone else's SDK (Maps, url_launcher); this one is for *building the bridge ourself*
 
 ---
+
+## Judgment calls worth knowing about (so we can override)
+
+- **f42 (get_it / service locator)** → filed under State Management, not Tools, because it's a DI pattern you use _for_ state, not a CLI/editor tool.
+- **f47 (push notifications)** → filed under Firebase, since FCM is the near-universal backend for it. If your notes actually cover OS-level notification APIs generically, move it to Platform_Integrations instead.
+- **f48 (Google Maps)** and **f50 (localization)** → filed under Platform_Integrations rather than Firebase/UI, since they're SDK integrations, not core Flutter or Firebase.
+- **f11 (App customization)** → filed under Deployment, on the assumption it's app icon/name/package-id setup (pre-release config). If it's actually about widget-level theming/customization, it belongs in 01_Widgets_and_UI instead.
+
+If any of those four don't match what's actually inside the doc, move that one file — the rest of the structure holds either way.
